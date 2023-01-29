@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team Stats</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+
+    </div>
+    <h1>{{team}}</h1>
+    <h2>Team Stats</h2>
+    <h3>Most Goals:{% for item in scorers %}
+            {% if scorers.index(item)==0: %}
+                {{item[0]}}: {{item[1]}}</br>
+            {% endif %}
+        {% endfor %}</h3>
+    <h3>Most Assists:{% for item in assisters %}
+            {% if assisters.index(item)==0: %}
+                {{item[0]}}: {{item[1]}}</br>
+            {% endif %}
+        {% endfor %}</h3>
+    <h3>Most Goals Saved:{% for item in saves %}
+            {% if saves.index(item)==0: %}
+                {{item[0]}}: {{item[1]}}</br>
+            {% endif %}
+        {% endfor %}</h3>
+    <h3>Most Attempts:{% for item in attempts %}
+            {% if attempts.index(item)==0: %}
+                {{item[0]}}: {{item[1]}}</br>
+            {% endif %}
+        {% endfor %}</h3>
+    <h3>Most Tackles:{% for item in tackles %}
+            {% if tackles.index(item)==0: %}
+                {{item[0]}}: {{item[1]}}</br>
+            {% endif %}
+        {% endfor %}</h3>
+    <h2>Squad</h2>
+    <h3>Goalkeepers</h3>
+    <table>
+        <tr>
+            <th>Jersey Number</th>
+            <th>Name</th>
+        </tr>
+
+            {% for item in squad %}
+                {% if item[3]=="goalkeepers": %}
+                <tr>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[0]}} {{item[1]}}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+    </table>
+    <h3>Defenders</h3>
+    <table>
+        <tr>
+            <th>Jersey Number</th>
+            <th>Name</th>
+        </tr>
+
+            {% for item in squad %}
+                {% if item[3]=="defenders": %}
+                <tr>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[0]}} {{item[1]}}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+    </table>
+    <h3>Midfielders</h3>
+    <table>
+        <tr>
+            <th>Jersey Number</th>
+            <th>Name</th>
+        </tr>
+
+            {% for item in squad %}
+                {% if item[3]=="midfielders": %}
+                <tr>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[0]}} {{item[1]}}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+    </table>
+    <h3>Forwards</h3>
+    <table>
+        <tr>
+            <th>Jersey Number</th>
+            <th>Name</th>
+        </tr>
+
+            {% for item in squad %}
+                {% if item[3]=="forwards": %}
+                <tr>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[0]}} {{item[1]}}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+    </table>
+
+
+</body>
+</html>

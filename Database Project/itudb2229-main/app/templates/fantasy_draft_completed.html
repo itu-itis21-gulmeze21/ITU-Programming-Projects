@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fantasy Draft Completed!</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a href="stats">General Stats</a>
+      <a class="active" href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h2>Congrats, you have created your dream team:</h2>
+    <h3>Your Fantasy Team</h3>
+    <table>
+        <tr>
+
+            <th>Name</th>
+        </tr>
+
+            {% for item in players %}
+                <tr>
+                    <td>{{item}}</td>
+                </tr>
+            {% endfor %}
+    </table>
+    <h2>Player Stats</h2>
+    <h3>Goals</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Goals</th>
+        </tr>
+        {% for item in goals %}
+            {% if goals.index(item)<3: %}
+                <tr>
+                    <td>{{item[0]}}</td>
+                    <td>{{item[1]}}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Assists</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Assists</th>
+        </tr>
+        {% for item in assists %}
+        {% if assists.index(item)<3: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Passes Completed</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Passes Completed</th>
+        </tr>
+        {% for item in passes %}
+        {% if passes.index(item)<3: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Yellow Cards</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Yellow Cards</th>
+        </tr>
+        {% for item in yellowCards %}
+        {% if yellowCards.index(item)<3: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Saves</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Saves</th>
+        </tr>
+        {% for item in saves %}
+        {% if saves.index(item)<3: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Red Cards</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Red Cards</th>
+        </tr>
+        {% for item in redCards %}
+        {% if redCards.index(item)<3: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Total Attempts On Goal</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Attempts</th>
+        </tr>
+        {% for item in attempts %}
+        {% if attempts.index(item)<3: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>To reset this team and recreate another one, go the the <a href="">Home Page</a> and click on the reset Fantasy Team button!</h3>
+</body>
+</html>

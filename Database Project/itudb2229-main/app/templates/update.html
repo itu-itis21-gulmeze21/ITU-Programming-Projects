@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a href="stats">General Stats</a>
+      <a class="active" href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h1>Use Your Imagination!</h1>
+    <h3>Welcome to the update page. Let's see what happens when you change some features of a player:</h3>
+    <form action="{{ url_for('update')}}" method="post">
+        <label for="attribute">Select the attribute of the player you want to change:</label>
+        <select name="attribute" id="attribute">
+            <option value="OfficialSurname">Official Surname</option>
+            <option value="Role">Position</option>
+            <option value="JerseyNumber">Jersey Number</option>
+            <option value="Country">Country</option>
+        </select><br>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="fname" placeholder="First Name"><br>
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lname" placeholder="Last Name"><br>
+        <label for="desiredvalue">Desired Value:</label>
+        <input type="text" id="desiredvalue" name="dvalue" placeholder="Desired Value"><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

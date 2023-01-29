@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>General Stats</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a class="active" href="stats">General Stats</a>
+      <a href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h1>General Stats</h1>
+    <h2>Player Stats</h2>
+    <h3>Goals</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Goals</th>
+        </tr>
+        {% for item in goal %}
+        {% if goal.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Assists</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Assists</th>
+        </tr>
+        {% for item in assist %}
+        {% if assist.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Passes Completed</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Passes Completed</th>
+        </tr>
+        {% for item in pas %}
+        {% if pas.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Yellow Cards</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Yellow Cards</th>
+        </tr>
+        {% for item in yellow %}
+        {% if yellow.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Saves</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Saves</th>
+        </tr>
+        {% for item in save %}
+        {% if save.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h3>Tackles</h3>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Tackles</th>
+        </tr>
+        {% for item in tackle %}
+        {% if tackle.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <h2>Team Stats</h2>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Goals</th>
+        </tr>
+        {% for item in goalranking %}
+        {% if goalranking.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Assists</th>
+        </tr>
+        {% for item in assistranking %}
+        {% if assistranking.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Tackles</th>
+        </tr>
+        {% for item in tackleranking %}
+        {% if tackleranking.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Balls Recovered</th>
+        </tr>
+        {% for item in recoverranking %}
+        {% if recoverranking.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Saves</th>
+        </tr>
+        {% for item in savesranking %}
+        {% if savesranking.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Passing Accuracy (%)</th>
+        </tr>
+        {% for item in passaccuracyranking %}
+        {% if passaccuracyranking.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Possession (%)</th>
+        </tr>
+        {% for item in possessionranking %}
+        {% if possessionranking.index(item)<10: %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+
+</body>
+</html>

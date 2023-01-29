@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fantasy Draft</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a href="stats">General Stats</a>
+      <a class="active" href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h1>Welcome to the Fantasy Draft in Euro 2020</h1>
+    <h2>Using the 4-3-3 formation, create your own fantasy team from Euro 2020 players!</h2>
+    <h2>Let's see what would happen if these players had teamed up! </h2>
+    <h3>Start Drafting Your Team:</h3>
+
+    <form action="{{ url_for('fantasy_draft')}}" method="post">
+        <h4>Goalkeepers</h4></br>
+        <label for="goalkeeper">Choose a goalkeeper:</label>
+        <select name="goalkeeper" id="goalkeeper">
+            {% for item in goalkeepers: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        </br>
+        <h4>Defenders</h4></br>
+        <label for="defenders1">Choose the first defender:</label>
+        <select name="defenders1" id="defenders1">
+            {% for item in defenders: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <label for="defenders2">Choose the second defender:</label>
+        <select name="defenders2" id="defenders2">
+            {% for item in defenders: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <label for="defenders3">Choose the third defender:</label>
+        <select name="defenders3" id="defenders3">
+            {% for item in defenders: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <label for="defenders4">Choose the fourth defender:</label>
+        <select name="defenders4" id="defenders4">
+            {% for item in defenders: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        </br>
+        <h4>Midfielders</h4></br>
+        <label for="midfielders1">Choose the first midfielder:</label>
+        <select name="midfielders1" id="midfielders1">
+            {% for item in midfielders: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <label for="midfielders2">Choose the second midfielder:</label>
+        <select name="midfielders2" id="midfielders2">
+            {% for item in midfielders: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <label for="midfielders3">Choose the third midfielder:</label>
+        <select name="midfielders3" id="midfielders3">
+            {% for item in midfielders: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        </br>
+        <h4>Forwards</h4></br>
+        <label for="forwards1">Choose the first forward:</label>
+        <select name="forwards1" id="forwards1">
+            {% for item in forwards: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <label for="forwards2">Choose the second forward:</label>
+        <select name="forwards2" id="forwards2">
+            {% for item in forwards: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <label for="forwards3">Choose the third forward:</label>
+        <select name="forwards3" id="forwards3">
+            {% for item in forwards: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

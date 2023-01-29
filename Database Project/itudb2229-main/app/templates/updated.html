@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updated</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a href="stats">General Stats</a>
+      <a class="active" href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h1>Congrats, the {{attribute}} of the player is changed to {{desired_value}}!</h1>
+    <h2>Now go the the <a href="teams">Teams</a> page and look what is changed!</h2>
+</body>
+</html>

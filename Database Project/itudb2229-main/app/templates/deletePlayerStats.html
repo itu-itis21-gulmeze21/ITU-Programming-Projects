@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Stats</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a href="stats">General Stats</a>
+      <a class="active" href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h1>Delete player statistics of a player at an arbitrary game:</h1>
+    <form action="{{ url_for('deletePlayerStats')}}" method="post">
+        <h4>Games</h4></br>
+        <label for="game">Choose a game:</label>
+        <select name="game" id="game">
+            {% for item in games: %}
+                <option value="{{item[5]}}">{{item[0]}}:{{item[1]}}</option>
+            {% endfor %}
+        </select>
+
+         <h4>Player</h4><br>
+         <label for="firstname">First Name:</label>
+         <input type="text" id="firstname" name="fname" placeholder="First Name"><br>
+         <label for="lastname">Last Name:</label>
+         <input type="text" id="lastname" name="lname" placeholder="Last Name"><br>
+        <h4>Select the statistic for this player:</h4>
+         <label for="stat">Choose a team:</label>
+         <select name="stat" id="stat">
+            {% for item in statistics: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+         <button type="submit">Submit</button>
+     </form>
+</body>
+</html>

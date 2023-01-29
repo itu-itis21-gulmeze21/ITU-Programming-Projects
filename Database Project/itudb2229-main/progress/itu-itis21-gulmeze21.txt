@@ -1,0 +1,29 @@
+-setup the environment
+-created the python project and created the sqlite db with tables
+-__init__.py file
+-created views.py 
+-created 4 teamplates: all_games.html,team_stats.html,home_page.html,teams.html
+-declared 4 functions with respect to the 4 templates
+-declared getTeams method that gets all distinct teams from Match_information.csv(used in teams.html)
+-declared getAllGames method that gets all games played in euro2020 and this data is used in all_games.html which views all games round by round
+-declared stats, fantasyEuro2020, getSquad, getMostGoals, getMostAssists, getMostSaves, getMostAttempts, getMostGoalsGeneral, getMostAssistsGeneral, getMostPassesGeneral, getMostYellowGeneral,getMostSavesGeneral,update functions are done
+-team_stats view updated, squad members are shown in table according to their roles
+-stats view created, player statistics part of this view is done
+-fantasyEuro2020 view created to update or inssert data
+-update view is created, update process will be handled here. 
+-update function completed, it allows to update the desired data of the desired player from Match_player_statistics and Match_lineup
+-update view is completed, includes html form with select and text inputs
+-fantasy_draft function and view is created and completed, user selects the players and the program creates a new table and inserts the players to here.
+-updated.html and fantasy_draft_completed.html files are created and completed, shows what happened after update or fantasy draft.
+-statsFantasy function created and completed to see how the statistics look like for a newly created fantasy team.
+-a form for reseting the created fantasy team is created and completed in home_page, the submit button drops the fantasy_team table and allows to recreate another team.
+-fantasyEuro2020.html is updated.
+-5 newly added views
+-insertPlayerStats view for inserting player statistics
+-updateStats view for updating statistics of a player
+-deletePlayer view for deleting a player from a lineup
+-deletePlayerStats view for deleting a statistic ofa player
+-insertPlayer view for inserting a player into a lineup
+-getPlayerStatName, getPlayerStatID, getPlayerID, getPlayerAttributes, getTeamsByID functions are created and completed.
+-updateStats, insertPlayer, deletePlayer, insertPlayerStats, deletePlayerStats view functions are created and completed. these views are used to manipulate data in Match_lineups and Match_player_statistics tables. the functionalities of them can be understood by the function name
+ 

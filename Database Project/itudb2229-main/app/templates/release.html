@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a href="stats">General Stats</a>
+      <a class="active" href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h1>Release the player from their national team!</h1>
+    <h3>Welcome to the release player page. Release the player you want and see what changes!:</h3>
+    <form action="{{ url_for('release')}}" method="post">
+
+        <h4>Surname</h4></br>
+        <label for="surname">Last Name:</label>
+        <input type="text" id="surname" name="last_name" placeholder="Last Name"><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

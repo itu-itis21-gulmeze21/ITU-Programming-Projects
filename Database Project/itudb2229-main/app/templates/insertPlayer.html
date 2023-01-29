@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Player</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="topnav">
+      <a href="/"> Home</a>
+      <a href="teams">Teams</a>
+      <a href="all_games">All Games</a>
+      <a href="stats">General Stats</a>
+      <a class="active" href="fantasyEuro2020">Fantasy Euro 2020</a>
+      <a href="randomfacts">Random Facts</a>
+    </div>
+    <h1>Insert a player into the lineup of an arbitrary game:</h1>
+     <form action="{{ url_for('insertPlayer')}}" method="post">
+        <h4>Games</h4></br>
+        <label for="game">Choose a game:</label>
+        <select name="game" id="game">
+            {% for item in games: %}
+                <option value="{{item[5]}}">{{item[0]}}:{{item[1]}}</option>
+            {% endfor %}
+        </select>
+
+         <h4>Player</h4><br>
+         <label for="firstname">First Name:</label>
+         <input type="text" id="firstname" name="fname" placeholder="First Name"><br>
+         <label for="lastname">Last Name:</label>
+         <input type="text" id="lastname" name="lname" placeholder="Last Name"><br>
+         <h4>Select the country for this player:</h4>
+         <label for="teamselect">Choose a team:</label>
+         <select name="teamselect" id="teamselect">
+            {% for item in countries: %}
+                <option value="{{item}}">{{item}}</option>
+            {% endfor %}
+        </select>
+         <button type="submit">Submit</button>
+     </form>
+
+    <h2>Now go to the Add Player Stats page and add the stats for that player!</h2>
+</body>
+</html>

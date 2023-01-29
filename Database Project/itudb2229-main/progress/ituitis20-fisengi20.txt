@@ -1,0 +1,4 @@
+-created a template: game_info.html
+-declared a functions with respect to the game_info template
+-declared matchInformation method get who and when scored in games 
+-updated all_games.html

@@ -1,0 +1,11 @@
+-Declared randomfacts, getMostTackles ,getMostTacklesGeneral,getPowerRankingTeams, getRandomStats, getRefCards update functions are done
+-team_stats view updated, getMostTackles is added
+-stats view updated, getMostTacklesGeneral is added, getPowerRankingTeams is added
+-created a template: randomfacts.html
+-Added some stats to randomfacts view, most corners in a game, most fouls committed in a game, referee ranking on given yellow or red card numbers etc.
+-Added a delete operation that releases a player from their national team.
+-Added release.html which works with getting the player's surname by text input. After that released player gets deleted from the database.
+-Added released.html which gives the information that player has been released from their team.
+-Updated fantasyeuro2020 view, release player is added.
+-Added a css file.
+-Updated all the functions to add stylesheet to all of them, added a top navigation bar to rotate easily in our website.
