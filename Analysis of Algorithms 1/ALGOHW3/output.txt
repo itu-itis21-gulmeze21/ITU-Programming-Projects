@@ -1,0 +1,11 @@
+0,-,-,-,-,-,-
+1,P1,0,0,P1:0-Black, Incomplete
+2,P2,0,0,P2:0-Red;P3:0-Black;P1:1-Red, Incomplete
+3,P3,0,0,P3:0-Red;P1:1-Black;P2:1-Red, Incomplete
+4,P3,1,1,P3:1-Red;P1:1-Black;P2:1-Red, Complete
+5,P1,1,1,P1:1-Black;P2:1-Red, Complete
+6,P2,1,1,P2:1-Black, Complete
+
+Scheduling finished in 1313 ms.
+3 of 3 processes are completed.
+The order of completion of the tasks: P3-P1-P2
